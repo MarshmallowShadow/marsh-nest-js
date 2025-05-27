@@ -8,7 +8,7 @@ async function bootstrap() {
   // Swagger
   const options = new DocumentBuilder().build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api-docs', app, document);
+  SwaggerModule.setup('swagger-ui', app, document);
 
   await app.listen(process.env.PORT ?? 8080);
 }
