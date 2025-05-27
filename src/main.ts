@@ -6,7 +6,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Swagger
-  const options = new DocumentBuilder().build();
+  const options = new DocumentBuilder()
+    .setTitle(`Marsh's NestJS REST API Project`)
+    .setDescription(`Basic template for a RESTful API project in NestJS`)
+    .setVersion('1.0')
+    .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('swagger-ui', app, document);
 
