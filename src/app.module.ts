@@ -4,11 +4,25 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/database.config';
 
-const imports = [TypeOrmModule.forRoot(typeOrmConfig)];
+// eslint-disable-next-line prettier/prettier
+const imports = [
+  TypeOrmModule.forRoot(typeOrmConfig)
+];
+
+// eslint-disable-next-line prettier/prettier
+const controllers = [
+  AppController
+];
+
+// eslint-disable-next-line prettier/prettier
+const providers = [
+  AppService
+];
+
 
 @Module({
   imports: imports,
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: controllers,
+  providers: providers,
 })
 export class AppModule {}
