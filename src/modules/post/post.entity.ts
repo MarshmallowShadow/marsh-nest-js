@@ -4,15 +4,31 @@ import { Column, Entity } from 'typeorm';
 
 @Entity('t_post')
 export class Post extends BaseEntity {
-  @Column()
+  @Column({
+    nullable: true,
+    name: 'user_id',
+    comment: '작성자 ID',
+  })
   userId: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+    name: 'title',
+    comment: '제목',
+  })
   title: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+    name: 'content',
+    comment: '내용',
+  })
   content: string;
 
-  @Column()
+  @Column({
+    nullable: true,
+    name: 'deleted',
+    comment: '삭제 여부',
+  })
   deleted: YN;
 }
